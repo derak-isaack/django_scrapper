@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -o errexit
+
+set -o nounset
+
+watchmedo auto-restart -d dj_celery_app/ -p '*.py' --celery -A dj_celery_app worker --loglevel=INFO 
